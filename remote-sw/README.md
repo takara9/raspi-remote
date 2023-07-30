@@ -22,12 +22,27 @@ sudo make install
 インストールしたpingできるPCなどから、curlでアクセスできます。
 
 
-GPIO 27 ピンを 300ミリ秒 ONにするには、次のように実行する。
+
+### GPIO 2 ピンを 300ミリ秒 ONにする
 
 ```
-curl -X POST http://rp3:8000/api/v1/raspi -H 'Content-Type: application/json'  -d '{"pin":"27","keep":"300"}'
+curl -X POST http://rp1:8000/api/v1/raspi -H 'Content-Type: application/json'  -d '{"pin":"2","keep":"300"}'
 ```
 
+
+### GPIO 2 ピンを ON にする
+
+```
+curl -X POST http://rp1:8000/api/v1/on -H 'Content-Type: application/json'  -d '{"pin":"2"}'
+```
+
+
+
+### GPIO 2 ピンを OFF にする
+
+```
+curl -X POST http://rp1:8000/api/v1/off -H 'Content-Type: application/json'  -d '{"pin":"2"}'
+```
 
 
 

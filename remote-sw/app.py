@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from flask import Flask,request,Response
-from myfunc import version, command, get_param, post_param, raspi
+from myfunc import version, command, get_param, post_param, raspi, raspi_on, raspi_off
 from raspi import init_gpio
 
 app = Flask(__name__)
@@ -30,6 +30,14 @@ def post_json():
 @app.route("/api/v1/raspi", methods=['POST'])
 def post_raspi():
     return raspi()
+
+@app.route("/api/v1/on", methods=['POST'])
+def post_on():
+    return raspi_on()
+
+@app.route("/api/v1/off", methods=['POST'])
+def post_off():
+    return raspi_off()
 
 
 if __name__ == "__main__":

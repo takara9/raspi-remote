@@ -34,3 +34,35 @@ def power_sw(pin,keep):
         print("Unexpected error: ", err)
         return err
 
+
+
+def power_on(pin):
+    try:
+        GPIO.output(pin, True)
+        return 'ok'
+    except OSError as err:
+        print("OS error: ", err)
+        return err
+    except ValueError as err:
+        print("GPIO Error: ", err)
+        return err
+    except Exception as err:
+        print("Unexpected error: ", err)
+        return err
+
+
+def power_off(pin):
+    try:
+        GPIO.output(pin, False)
+        return 'ok'
+    except OSError as err:
+        print("OS error: ", err)
+        return err
+    except ValueError as err:
+        print("GPIO Error: ", err)
+        return err
+    except Exception as err:
+        print("Unexpected error: ", err)
+        return err
+    
+
